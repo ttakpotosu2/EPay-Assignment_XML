@@ -7,18 +7,23 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class GridAdapter(
-	private val servicesList: List<Services>
-) : RecyclerView.Adapter<GridAdapter.ServicesViewHolder>(){
+class ServicesAdapter(
+	private var servicesList: List<Services>
+) : RecyclerView.Adapter<ServicesAdapter.ServicesViewHolder>(){
 	
 	inner class ServicesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 	
-		val icon: ImageView = itemView.findViewById(R.id.rv_grid_icon)
-		val text: TextView = itemView.findViewById(R.id.rv_grid_text)
+		val icon: ImageView = itemView.findViewById(R.id.serv_rv_icon)
+		val text: TextView = itemView.findViewById(R.id.serv_rv_text)
 	}
 	
-	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GridAdapter.ServicesViewHolder {
-		val view = LayoutInflater.from(parent.context).inflate(R.layout.grid_item, parent, false)
+	fun setFilteredServices(list: List<Services>){
+		this.servicesList = list
+		notifyDataSetChanged()
+	}
+	
+	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ServicesAdapter.ServicesViewHolder {
+		val view = LayoutInflater.from(parent.context).inflate(R.layout.serv_item, parent, false)
 		return ServicesViewHolder(view)
 	}
 	
@@ -36,5 +41,6 @@ class GridAdapter(
 
 data class Services (
 	val icon: Int,
-	val title: String
+	val title: String,
+	val category: String
 )

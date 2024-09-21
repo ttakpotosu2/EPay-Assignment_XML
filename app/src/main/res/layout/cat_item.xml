@@ -9,7 +9,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/row_rounded_bg"
+        android:id="@+id/category_item"
+        android:background="@drawable/category_selector"
         android:paddingVertical="12dp"
         android:paddingHorizontal="12dp"
         android:elevation="3dp"
@@ -20,7 +21,7 @@
         <ImageView
             android:layout_width="16dp"
             android:layout_height="16dp"
-            android:id="@+id/rv_row_icon"
+            android:id="@+id/category_item_icon"
             tools:src="@drawable/baseline_add_home_24"
             app:tint="@color/white"
             android:layout_marginRight="6dp" />
@@ -28,11 +29,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/rv_row_text"
+            android:id="@+id/category_item_text"
             android:textSize="18sp"
             android:textAllCaps="true"
             android:textFontWeight="700"
-            android:text="Row Item"
+            android:text="Cat Item"
             android:textColor="@color/white" />
 
     </LinearLayout>

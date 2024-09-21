@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- State when the layout is pressed -->
+    <item
+        android:drawable="@drawable/row_rounded_bg_selected"
+        android:state_selected="true">
+        <shape android:shape="rectangle">
+            <!-- shape property for the view based on the value particular view would be drawn -->
+            <corners android:radius="25dp" />
+        </shape>
+    </item>
+
+    <!-- Default state -->
+    <item
+        android:drawable="@drawable/row_rounded_bg"
+        android:state_selected="false">
+        <shape android:shape="rectangle">
+            <!-- shape property for the view based on the value particular view would be drawn -->
+            <corners android:radius="25dp" />
+        </shape>
+    </item>
+</selector>
